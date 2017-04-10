@@ -4,6 +4,10 @@ author: "Josephine Nyoike, Arielle Dror, Kendra"
 date: "April 10, 2017"
 output: html_document
 ---
-```{r}
-
+```{r, include= TRUE, message= FALSE, warning= FALSE}
+library(mdsr)
+library(RMySQL)
+db <- dbConnect_scidb(dbname = "imdb")
+db %>%
+  dbGetQuery("SELECT * FROM kind_type;")
 ```
